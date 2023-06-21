@@ -7,19 +7,18 @@
 
 #!/bin/bash
 
+########################################################################################################
+# Adjust the Variables                                                                                 #
+########################################################################################################
+
 # Signature Policy Name
-mkey="DVWA_SIGNATURE_PROFILE"
+mkey="Extended%20Protection"
 
 # FortiWeb IP
 HOST=192.168.4.2
 
 # Admin Authentication
 TOKEN=`echo '{"username":"userapi","password":"abc123","vdom":"root"}' | base64`
-
-# Prepare URL and Headers
-base_url="https://${HOST}/api/v2.0/waf/signature.descsearch?mkey=${mkey}&description="
-authorization_header="Authorization: ${TOKEN}"
-accept_header="Accept: application/json"
 
 # List of CVEs
 cves=(
@@ -37,6 +36,15 @@ cves=(
 "CVE-2019-14893" "CVE-2019-14892" "CVE-2019-14540" "CVE-2019-14439"
 "CVE-2019-14379" "CVE-2019-12814" "CVE-2019-12384"
 )
+
+########################################################################################################
+# Script                                                                                 #
+########################################################################################################
+
+# Prepare URL and Headers
+base_url="https://${HOST}/api/v2.0/waf/signature.descsearch?mkey=${mkey}&description="
+authorization_header="Authorization: ${TOKEN}"
+accept_header="Accept: application/json"
 
 for cve in ${cves[@]}
 do
