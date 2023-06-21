@@ -1,11 +1,11 @@
+#!/bin/bash
+
 # This script performs a search for any set of keywords within signatures, utilizing the FortiWeb API.
 # Ensure curl and jq are installed on your system, as they are dependencies for this script.
 # Modify the variables and list within the script to suit your search criteria and your environment.
 # The list isn't limited to CVEs; it can include any keywords of your interest.
 
 # bbuonassera June 2023
-
-#!/bin/bash
 
 ########################################################################################################
 # Adjust the Variables                                                                                 #

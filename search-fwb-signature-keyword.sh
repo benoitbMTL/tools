@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # This script performs a keyword search within signatures using the FortiWeb API.
 # Ensure that curl and jq are installed on your system as they are required for this script.
 # Please adjust the variables (Username, Password, VDOM, Signature Policy Name and FortiWeb IP)
@@ -20,8 +22,6 @@
 #   ./search-fwb-signature-keyword.sh "CVE-2023" -c             # count all signatures with partial CVE reference
 #   ./search-fwb-signature-keyword.sh "HTTP Response Body" -p   # print all signatures with description containing "HTTP Response Body"
 #   ./search-fwb-signature-keyword.sh "Log4j" -i                # print all signatures id with keyword "Log4j"
-
-#!/bin/bash
 
 ########################################################################################################
 # Adjust the Variables                                                                                 #
